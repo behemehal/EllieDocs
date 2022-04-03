@@ -1,7 +1,7 @@
 # Summary
 
 # Introduction
-- [Contents of book](./contents_of_book.md)
+- [Contents of book](./index.md)
     * [What is ellie](./what_is_ellie.md)
     * [EllieC](./elliec.md)
     * [EllieVM](./ellievm.md)
