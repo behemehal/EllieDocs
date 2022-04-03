@@ -5,3 +5,9 @@ multilingual = true
 src = "src"
 title = "EllieDocs"
 description = "Documentation for the Ellie programming language"
+
+[output.html]
+curly-quotes = true
+git-repository-url = "https://github.com/behemehal/EllieDocs"
+git-repository-icon = "fa-github"
+site-url = "/EllieDocs/"
