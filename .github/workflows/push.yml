@@ -1,29 +1,10 @@
-name: GH Pages Deploy
-
-on:
-  push:
-    branches: [main]
-
-  pull_request:
-    branches: [main]
-
+name: Deploy mdBook
+on: [push]
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@v2
-
-      - name: Install dependencies 🔧
-        run: make install
-
-      - name: Build 🏗️
-        run: make build
-
-      - name: Deploy to GitHub Pages 🚀
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v2
+      - uses: XAMPPRocky/deploy-mdbook@v1.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: book
+            token: ${{ secrets.GITHUB_TOKEN }}
