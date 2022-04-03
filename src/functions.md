@@ -6,6 +6,12 @@ fn functionName(param1: Type, param2: Type) : ReturnType {
 }
 ```
 
+## Native functions
+Functions without bodies are native functions.
+```ellie
+fn print(str: string);
+```
+
 ## Generics with functions
 
 ```ellie

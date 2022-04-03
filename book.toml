@@ -1,0 +1,7 @@
+[book]
+authors = ["Ahmetcan Aksu"]
+language = "en"
+multilingual = true
+src = "src"
+title = "EllieDocs"
+description = "Documentation for the Ellie programming language"
