@@ -42,13 +42,13 @@ dependencies:
 ## Install from github
 
 ```sh
-lia install github.com/ahmtcn123/wole
+lia install --package github.com/ahmtcn123/wole
 ```
 
 ## Install from lia
 
 ```sh
-lia install wole
+lia install --package wole
 ```
 
 ---
