@@ -3,13 +3,13 @@
 ## Installing Compiler
 
 ```sh
-lia installFeature elliec
+lia install --feature elliec
 ```
 
 ## Installing EllieVM
 
 ```sh
-lia installFeature ellievm
+lia install --feature ellievm
 ```
 
 ## Creating new project
