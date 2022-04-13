@@ -3,6 +3,8 @@
 # Introduction
 - [Contents of book](./index.md)
     * [What is ellie](./what_is_ellie.md)
+    * [File Extensions](./file_extensions.md)
+    * [Developer Perspective](./developer_perspective.md)
     * [EllieC](./elliec.md)
     * [EllieVM](./ellievm.md)
     * [Lia - The package manager](./lia.md)

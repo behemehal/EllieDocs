@@ -11,7 +11,7 @@ EllieC is the compiler for the Ellie language
     - Outputs the compilation log in JSON format
   - `-b | --binary-version`
     - Version of the package
-  - `-c | --module-description`
+  - `-d | --module-description`
     - Description of the module
   - `-m | --module-name`
     - Name of the module
@@ -27,6 +27,23 @@ EllieC is the compiler for the Ellie language
   - `-i | --import-module {binary}={workspaceFolder}`:
     - Import a module
     - example usage: `--insert-module ./ellieStd.eib`. For referencing code in other modules, you can give directory path to this option. For example; `--insert-module ./ellieStd.eib=./ellieStdFolder`.
+  - `c | --arch`
+    - Targeted architecture for bytecode
+        * `64`: 64bit
+        * `32`: 32bit
+        * `16`: 16bit
+        * `8` : 8bit
+  - `-e | --exclode-std`
+    - Exclude standard library
+  - `-s | --show-debug-lines`
+    - Show debug lines
+  - `-w | --disable-warnings`
+    - Disable warnings
+  - `-h | --help`
+    - Show help
+  - `-a | --allow-panics`
+    - Allow panics
+
 - ### viewModule
     `elliec viewModule [file]`
     #### Options

@@ -6,6 +6,8 @@
     ```ellie
         int
         float
+        double
+        byte
     ```
   - String
     ```ellie
