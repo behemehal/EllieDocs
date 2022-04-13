@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Contents of book</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="what_is_ellie.html"><strong aria-hidden="true">1.1.</strong> What is ellie</a></li><li class="chapter-item expanded "><a href="elliec.html" class="active"><strong aria-hidden="true">1.2.</strong> EllieC</a></li><li class="chapter-item expanded "><a href="ellievm.html"><strong aria-hidden="true">1.3.</strong> EllieVM</a></li><li class="chapter-item expanded "><a href="lia.html"><strong aria-hidden="true">1.4.</strong> Lia - The package manager</a></li></ol></li><li class="chapter-item expanded "><a href="lia.html"><strong aria-hidden="true">2.</strong> Lia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="liaInstallation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="liaUsage.html"><strong aria-hidden="true">2.2.</strong> Usage</a></li><li class="chapter-item expanded "><a href="liaDeepDive.html"><strong aria-hidden="true">2.3.</strong> Deep Dive</a></li></ol></li><li class="chapter-item expanded "><a href="ffi.html"><strong aria-hidden="true">3.</strong> FFI</a></li><li class="chapter-item expanded "><a href="syntax.html"><strong aria-hidden="true">4.</strong> Syntax</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="types.html"><strong aria-hidden="true">4.1.</strong> Types</a></li><li class="chapter-item expanded "><a href="variables.html"><strong aria-hidden="true">4.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">4.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">4.4.</strong> Classes</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">4.5.</strong> Imports</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Contents of book</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="what_is_ellie.html"><strong aria-hidden="true">1.1.</strong> What is ellie</a></li><li class="chapter-item expanded "><a href="file_extensions.html"><strong aria-hidden="true">1.2.</strong> File Extensions</a></li><li class="chapter-item expanded "><a href="developer_perspective.html"><strong aria-hidden="true">1.3.</strong> Developer Perspective</a></li><li class="chapter-item expanded "><a href="elliec.html" class="active"><strong aria-hidden="true">1.4.</strong> EllieC</a></li><li class="chapter-item expanded "><a href="ellievm.html"><strong aria-hidden="true">1.5.</strong> EllieVM</a></li><li class="chapter-item expanded "><a href="lia.html"><strong aria-hidden="true">1.6.</strong> Lia - The package manager</a></li></ol></li><li class="chapter-item expanded "><a href="lia.html"><strong aria-hidden="true">2.</strong> Lia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="liaInstallation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="liaUsage.html"><strong aria-hidden="true">2.2.</strong> Usage</a></li><li class="chapter-item expanded "><a href="liaDeepDive.html"><strong aria-hidden="true">2.3.</strong> Deep Dive</a></li></ol></li><li class="chapter-item expanded "><a href="ffi.html"><strong aria-hidden="true">3.</strong> FFI</a></li><li class="chapter-item expanded "><a href="syntax.html"><strong aria-hidden="true">4.</strong> Syntax</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="types.html"><strong aria-hidden="true">4.1.</strong> Types</a></li><li class="chapter-item expanded "><a href="variables.html"><strong aria-hidden="true">4.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">4.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">4.4.</strong> Classes</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">4.5.</strong> Imports</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,7 +143,7 @@
 <ul>
 <li>
 <h3 id="compile"><a class="header" href="#compile">compile</a></h3>
-<code>elliec compile [file] -j -b [version] -c [module-description] -m [module-name] -p ./ -o bin -i [File]=[Folder]</code>
+<p><code>elliec compile [file] -j -b [version] -c [module-description] -m [module-name] -p ./ -o bin -i [File]=[Folder]</code></p>
 <h4 id="options"><a class="header" href="#options">Options</a></h4>
 <ul>
 <li><code>-j | --json-log</code>
@@ -156,7 +156,7 @@
 <li>Version of the package</li>
 </ul>
 </li>
-<li><code>-c | --module-description</code>
+<li><code>-d | --module-description</code>
 <ul>
 <li>Description of the module</li>
 </ul>
@@ -190,11 +190,48 @@
 <li>example usage: <code>--insert-module ./ellieStd.eib</code>. For referencing code in other modules, you can give directory path to this option. For example; <code>--insert-module ./ellieStd.eib=./ellieStdFolder</code>.</li>
 </ul>
 </li>
+<li><code>c | --arch</code>
+<ul>
+<li>Targeted architecture for bytecode
+<ul>
+<li><code>64</code>: 64bit</li>
+<li><code>32</code>: 32bit</li>
+<li><code>16</code>: 16bit</li>
+<li><code>8</code> : 8bit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>-e | --exclode-std</code>
+<ul>
+<li>Exclude standard library</li>
+</ul>
+</li>
+<li><code>-s | --show-debug-lines</code>
+<ul>
+<li>Show debug lines</li>
+</ul>
+</li>
+<li><code>-w | --disable-warnings</code>
+<ul>
+<li>Disable warnings</li>
+</ul>
+</li>
+<li><code>-h | --help</code>
+<ul>
+<li>Show help</li>
+</ul>
+</li>
+<li><code>-a | --allow-panics</code>
+<ul>
+<li>Allow panics</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <h3 id="viewmodule"><a class="header" href="#viewmodule">viewModule</a></h3>
-<code>elliec viewModule [file]</code>
+<p><code>elliec viewModule [file]</code></p>
 <h4 id="options-1"><a class="header" href="#options-1">Options</a></h4>
 <ul>
 <li><code>-j | --json-log</code>
@@ -219,7 +256,7 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="what_is_ellie.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="developer_perspective.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                             <a rel="next" href="ellievm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -231,7 +268,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="what_is_ellie.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="developer_perspective.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <a rel="next" href="ellievm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
