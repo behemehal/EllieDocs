@@ -1,100 +1,10 @@
 # Usage
 
-## Installing Compiler
-
-```sh
-lia install --feature elliec
-```
-
-## Installing EllieVM
-
-```sh
-lia install --feature ellievm
-```
-
-## Creating new project
-
-```sh
-lia init
-```
-
-This command will give you the [file structure](./file_structure.md) of a new project.
-
-# lia.yaml configuration file
-
-```yaml
-package_name: my_project
-details: My project
-version: 0.0.1
-dependencies:
-  - # Package from github
-    branch: main
-    source: github.com/ahmtcn123/wole
-  - # Package from lia
-    name: wole
-    version: 0.0.1
-```
-
----
-
-# Installing packages
-
-## Install from github
-
-```sh
-lia install --package github.com/ahmtcn123/wole
-```
-
-## Install from lia
-
-```sh
-lia install --package wole
-```
-
----
-
-# Publishing packages
-
-For publishing packages, you need to register to [lia](https://lia.ellie-lang.org).
-
-~~After registering, you can get your [api key](https://lia.ellie-lang.org/api-key) and save it by running the following command:~~
-
-_`Lia cannot serve any packages right now`_
-
-```sh
-lia config set api-key <api-key>
-```
-
-After that, you can publish your package by running the following command:
-
-```sh
-lia publish
-```
-
----
-
-# Compiling workspace
-
-For compiling ellie workspace, you can use the following command:
-
-```sh
-lia compile
-```
-
----
-
-# Running ellie code
-
-For running ellie code, you can use the following command:
-
-```sh
-lia run
-```
-
----
-
-# Running tests
-
-```sh
-lia test
-```
+*  [Creating new project](./liaUsage-new_project.md)
+*  [Installing packages](./liaUsage-installing-packages.md)
+*  [Installing features](./liaUsage-installing-features.md)
+*  [Publishing packages](./liaUsage-publishing-packages.md)
+*  [Building packages](./liaUsage-building-packages.md)
+*  [Running packages](./liaUsage-running-packages.md)
+*  [Running tests](./liaUsage-running-tests.md)
+*  [Global Registry](./liaUsage-registry.md)
