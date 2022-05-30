@@ -30,14 +30,14 @@
 
   --theme-popup-bg: #884a6f;
   --theme-popup-border: #f5eaef;
-  --theme-hover: #884a6f;
+  --theme-hover: #d200c6;
 
   --quote-bg: #884a6f;
   --quote-border: #462b45;
 
-  --table-border-color: #462b45;
-  --table-header-bg: #462b45;
-  --table-alternate-bg: #884a6f;
+  --table-border-color: #f5eaef;
+  --table-header-bg: #884a6f;
+  --table-alternate-bg: #74006e;
 
   --searchbar-border-color: #884a6f;
   --searchbar-bg: #f5eaef;
@@ -70,14 +70,14 @@
 
   --theme-popup-bg: #f5eaef;
   --theme-popup-border: #884a6f;
-  --theme-hover: #f5eaef;
+  --theme-hover: #ffffff;
 
   --quote-bg: #884a6f;
   --quote-border: #462b45;
 
   --table-border-color: #462b45;
-  --table-header-bg: #462b45;
-  --table-alternate-bg: #884a6f;
+  --table-header-bg: #f5eaef;
+  --table-alternate-bg: #f5eaef;
 
   --searchbar-border-color: #884a6f;
   --searchbar-bg: #f5eaef;
