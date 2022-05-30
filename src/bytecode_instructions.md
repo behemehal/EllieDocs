@@ -55,7 +55,7 @@
 - [CALL](./bytecode_instructions.md#CALL)
 - [RET](./bytecode_instructions.md#RET)
 - [AOL](./bytecode_instructions.md#AOL)
-- [PUSH](./bytecode_instructions.md#PAA)
+- [PUSH](./bytecode_instructions.md#PUSH)
 - [LEN](./bytecode_instructions.md#LEN)
 - [A2I](./bytecode_instructions.md#A2I)
 - [A2F](./bytecode_instructions.md#A2F)

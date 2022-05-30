@@ -19,8 +19,6 @@
         *  [Running tests](./liaUsage-running-tests.md)
         *  [Formatter](./liaUsage-formatter.md)
         *  [Global Registry](./liaUsage-registry.md)
-
-
     *  [Lia Deep Dive](./liaDeepDive.md)
 - [FFI](./ffi.md)
 - [Syntax](./syntax.md)
