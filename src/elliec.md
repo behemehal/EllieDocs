@@ -22,6 +22,7 @@ EllieC is the compiler for the Ellie language
         * `bin`: Binary
         * `json`: JSON
         * `byteCode`: Bytecode
+        * `byteCodeAsm`: Bytecode Assembly
         * `depA`: Dependency Analysis
         * `nop`: No Output
   - `-i | --import-module {binary}={workspaceFolder}`:
@@ -31,8 +32,6 @@ EllieC is the compiler for the Ellie language
     - Targeted architecture for bytecode
         * `64`: 64bit
         * `32`: 32bit
-        * `16`: 16bit
-        * `8` : 8bit
   - `-e | --exclode-std`
     - Exclude standard library
   - `-s | --show-debug-lines`

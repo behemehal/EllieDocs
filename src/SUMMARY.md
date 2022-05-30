@@ -4,7 +4,6 @@
 - [Contents of book](./index.md)
     * [What is ellie](./what_is_ellie.md)
     * [File Extensions](./file_extensions.md)
-    * [Developer Perspective](./developer_perspective.md)
     * [EllieC](./elliec.md)
     * [EllieVM](./ellievm.md)
     * [Lia - The package manager](./lia.md)
@@ -18,6 +17,7 @@
         *  [Building packages](./liaUsage-building-packages.md)
         *  [Running packages](./liaUsage-running-packages.md)
         *  [Running tests](./liaUsage-running-tests.md)
+        *  [Formatter](./liaUsage-formatter.md)
         *  [Global Registry](./liaUsage-registry.md)
 
 
@@ -30,5 +30,9 @@
     * [Functions](./functions.md)
     * [Classes](./classes.md)
     * [Imports](./imports.md)
+    * [File Keys](file_keys.md)
+    * [Getter / Setter](getter_setter.md)
 - [Deep Dive](./deep_dive.md)
     * [Building Ellie](./building_ellie.md)
+- [ByteCode](./byte_code.md)
+    * [Instructions](./bytecode_instructions.md)

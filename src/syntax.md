@@ -1,10 +1,9 @@
 # Syntax
 
-* [Variables](variables.md)
-* [Functions](functions.md)
-* [Classes](classes.md)
-* File Keys
-* Getter / Setter
-* [Imports](imports.md)
-* [Data Types](types.md)
-
+- [Types](types.md)
+- [Variables](variables.md)
+- [Functions](functions.md)
+- [Classes](classes.md)
+- [Imports](imports.md)
+- [File Keys](file_keys.md)
+- [Getter / Setter](getter_setter.md)

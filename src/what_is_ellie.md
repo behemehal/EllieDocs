@@ -4,7 +4,7 @@ Ellie is a type-safe programing language that runs on embedded and sandboxed env
 ## Package Management
 Ellie's package manager [Lia](./lia.md) keeps all the packages in a global archive. Lia uses ellie's pre-compile system, so when you install a package, it will be compiled and stored in the archive. This helps you out in speed and memory usage.
 
-## Universally Compiled
+## Universally Compiled
 Ellie has leveling system on target environments. Packages with matching levels can be used on the target environment.
 
 ### VM Levels

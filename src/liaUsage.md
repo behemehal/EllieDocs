@@ -7,4 +7,5 @@
 *  [Building packages](./liaUsage-building-packages.md)
 *  [Running packages](./liaUsage-running-packages.md)
 *  [Running tests](./liaUsage-running-tests.md)
+*  [Formatter](./liaUsage-formatter.md)
 *  [Global Registry](./liaUsage-registry.md)

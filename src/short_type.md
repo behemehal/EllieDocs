@@ -10,3 +10,7 @@ Ellie has a shortening for nearly every item in the language. You could use them
 `co` is a short for `constructor`
 
 `ret` is a short for `return`
+
+`g` is a short for `get`
+
+`s` is a short for `set`

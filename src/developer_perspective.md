@@ -1,3 +1,0 @@
-# Developer Perspective
-
-TODO
