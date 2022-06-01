@@ -4,7 +4,7 @@ language = "en"
 multilingual = true
 src = "src"
 title = "EllieDocs"
-description = "Documentation for the Ellie programming language"
+description = "Documentation for the Ellie Programming Language"
 
 [output.html]
 curly-quotes = true
