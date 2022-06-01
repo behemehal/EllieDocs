@@ -297,7 +297,6 @@ Push A register value to array
 ## Addressing Modes
 - Immidiate
 - Absolute
-- IndirectA
 - IndirectB
 - IndirectC
 - IndirectX
