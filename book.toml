@@ -10,4 +10,4 @@ description = "Documentation for the Ellie Programming Language"
 curly-quotes = true
 git-repository-url = "https://github.com/behemehal/EllieDocs"
 git-repository-icon = "fa-github"
-site-url = "/EllieDocs/"
+site-url = "/"

@@ -34,3 +34,4 @@
     * [Building Ellie](./building_ellie.md)
 - [ByteCode](./byte_code.md)
     * [Instructions](./bytecode_instructions.md)
+    * [Instruction OpCodes](./bytecode_opcodes.md)
