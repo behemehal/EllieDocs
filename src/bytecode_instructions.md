@@ -295,7 +295,6 @@ Alter locals for next instruction from other scope resets in next instruction
 Push A register value to array
 
 ## Addressing Modes
-- Immidiate
 - Absolute
 - IndirectB
 - IndirectC
