@@ -350,3 +350,9 @@ Convert A register to bool
 
 ## Addressing Modes
 - Implict
+
+# POPS
+Pops last stack location
+
+## Addressing Modes
+- Implict
