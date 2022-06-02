@@ -366,7 +366,7 @@ Pops last stack location
 - Implict
 
 # ACP
-Alter cursor position
+Alter cursor position exclude next instruction
 
 ## Addressing Modes
 - Absolute
