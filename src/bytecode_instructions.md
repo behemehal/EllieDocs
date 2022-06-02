@@ -64,7 +64,9 @@
 - [A2S](./bytecode_instructions.md#a2s)
 - [A2C](./bytecode_instructions.md#a2c)
 - [A2O](./bytecode_instructions.md#a2o)
-
+- [JMPA](./bytecode_instructions.md#jmpa)
+- [POPS](./bytecode_instructions.md#pops)
+- [ACP](./bytecode_instructions.md#acp)
 
 
 # LDA
@@ -351,8 +353,20 @@ Convert A register to bool
 ## Addressing Modes
 - Implict
 
+# JMPA
+Jump to address if A register is true
+
+## Addressing Modes
+- Absolute
+
 # POPS
 Pops last stack location
 
 ## Addressing Modes
 - Implict
+
+# ACP
+Alter cursor position
+
+## Addressing Modes
+- Absolute

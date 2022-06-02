@@ -45,3 +45,4 @@ This table contains all reserved opcodes and addressing modes. If you're nerd th
 | a2o         | 0x5a     | -         | -        | -              | -                 | -         | -         | -         | -         | -         |
 | jmpa        | -        | -         | 0x5b     | -              | -                 | -         | -         | -         | -         | -         |
 | pops        | 0x5c     | -         | -        | -              | -                 | -         | -         | -         | -         | -         |
+| acp         |    -     |     -     |   0x5d   |       -        |         -         |     -     |     -     |     -     |     -     |     -     |
