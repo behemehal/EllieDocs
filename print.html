@@ -182,7 +182,7 @@
 <li><a href="file_structure.html">File Structure</a></li>
 <li><a href="lia.html">Lia - The package manager</a></li>
 </ul>
-<p><code>v1.2.3</code></p>
+<p><code>v1.3.4</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-ellie"><a class="header" href="#what-is-ellie">What is ellie</a></h1>
 <p>Ellie is a type-safe programing language that runs on embedded and sandboxed environments. </p>
 <h2 id="package-management"><a class="header" href="#package-management">Package Management</a></h2>
@@ -790,6 +790,9 @@ fn test(text: string) {
 <li><a href="./bytecode_instructions.html#a2s">A2S</a></li>
 <li><a href="./bytecode_instructions.html#a2c">A2C</a></li>
 <li><a href="./bytecode_instructions.html#a2o">A2O</a></li>
+<li><a href="./bytecode_instructions.html#jmpa">JMPA</a></li>
+<li><a href="./bytecode_instructions.html#pops">POPS</a></li>
+<li><a href="./bytecode_instructions.html#acp">ACP</a></li>
 </ul>
 <h1 id="lda"><a class="header" href="#lda">LDA</a></h1>
 <p>Load value to A register</p>
@@ -1075,11 +1078,23 @@ fn test(text: string) {
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
-<p>Pops last stack location</p>
+<h1 id="jmpa"><a class="header" href="#jmpa">JMPA</a></h1>
+<p>Jump to address if A register is true</p>
 <h2 id="addressing-modes-40"><a class="header" href="#addressing-modes-40">Addressing Modes</a></h2>
 <ul>
+<li>Absolute</li>
+</ul>
+<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
+<p>Pops last stack location</p>
+<h2 id="addressing-modes-41"><a class="header" href="#addressing-modes-41">Addressing Modes</a></h2>
+<ul>
 <li>Implict</li>
+</ul>
+<h1 id="acp"><a class="header" href="#acp">ACP</a></h1>
+<p>Alter cursor position</p>
+<h2 id="addressing-modes-42"><a class="header" href="#addressing-modes-42">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="instruction-opcodes"><a class="header" href="#instruction-opcodes">Instruction OpCodes</a></h1>
 <p>This table contains all reserved opcodes and addressing modes. If you’re nerd there is a <a href="https://github.com/behemehal/Ellie-Language/blob/dev/bytecode/instructions.csv">csv</a> as well</p>
@@ -1125,6 +1140,7 @@ fn test(text: string) {
 <tr><td>a2o</td><td>0x5a</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>jmpa</td><td>-</td><td>-</td><td>0x5b</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>pops</td><td>0x5c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>acp</td><td>-</td><td>-</td><td>0x5d</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </tbody></table>
 
                     </main>
