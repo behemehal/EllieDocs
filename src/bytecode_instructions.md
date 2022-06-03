@@ -139,30 +139,35 @@ Store value from A register to stack position
 
 ## Addressing Modes
 - Implict
+- Absolute
 
 # STB
 Store value from B register to stack position
 
 ## Addressing Modes
 - Implict
+- Absolute
 
 # STC
 Store value from C register to stack position
 
 ## Addressing Modes
 - Implict
+- Absolute
 
 # STX
 Store value from X register to stack position
 
 ## Addressing Modes
 - Implict
+- Absolute
 
 # STY
 Store value from Y register to stack position
 
 ## Addressing Modes
 - Implict
+- Absolute
 
 # EQ
 Compare equality on B and C registers and set A register to 1 if equal, 0 otherwise
