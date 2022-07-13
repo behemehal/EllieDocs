@@ -67,6 +67,9 @@
 - [JMPA](./bytecode_instructions.md#jmpa)
 - [POPS](./bytecode_instructions.md#pops)
 - [ACP](./bytecode_instructions.md#acp)
+- [BRK](./bytecode_instructions.md#brk)
+- [CALLN](./bytecode_instructions.md#calln)
+
 
 
 # LDA
@@ -375,3 +378,15 @@ Alter cursor position exclude next instruction
 
 ## Addressing Modes
 - Absolute
+
+# BRK
+Remove stack
+
+## Addressing Modes
+- Implicit
+
+# CALLN
+Call native function in VM
+
+## Addressing Modes
+- Immediate

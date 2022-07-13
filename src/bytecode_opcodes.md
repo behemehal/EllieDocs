@@ -1,6 +1,6 @@
 # Instruction OpCodes
 
-This table contains all reserved opcodes and addressing modes. If you're nerd there is a [csv](https://github.com/behemehal/Ellie-Language/blob/dev/bytecode/instructions.csv) as well
+This table contains all reserved opcodes and addressing modes. If you're nerd there is a [csv](https://github.com/behemehal/Ellie-Language/blob/main/bytecode/instructions.csv) as well
 
 | Instruction | Implicit | Immediate | Absolute | Absolute Index | Absolute Property | IndirectA | IndirectB | IndirectC | IndirectX | IndirectY |
 | ----------- | -------- | --------- | -------- | -------------- | ----------------- | --------- | --------- | --------- | --------- | --------- |
@@ -46,3 +46,5 @@ This table contains all reserved opcodes and addressing modes. If you're nerd th
 | jmpa        |    -     |     -     |   0x60   |       -        |         -         |     -     |     -     |     -     |     -     |     -     |
 | pops        |   0x61   |     -     |    -     |       -        |         -         |     -     |     -     |     -     |     -     |     -     |
 | acp         |    -     |     -     |   0x62   |       -        |         -         |     -     |     -     |     -     |     -     |     -     |
+| brk         |   0x99   |     -     |     -    |       -        |         -         |     -     |     -     |     -     |     -     |     -     |
+| calln       |    -     |    0x64   |     -    |       -        |         -         |     -     |     -     |     -     |     -     |     -     |

@@ -7,4 +7,4 @@ Welcome to ellie docs! Here you can find every single help about writing ellie.
  * [File Structure](file_structure.md)
  * [Lia - The package manager](lia.md)
 
- `v1.4.5`
+ `v1.5.0`

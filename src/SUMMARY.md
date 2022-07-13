@@ -22,6 +22,7 @@
     *  [Lia Deep Dive](./liaDeepDive.md)
 - [FFI](./ffi.md)
 - [Syntax](./syntax.md)
+    * [Keywords](./syntax-keywords.md)
     * [Short Type](./short_type.md)
     * [Types](./types.md)
     * [Variables](./variables.md)
