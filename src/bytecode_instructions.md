@@ -142,6 +142,7 @@ Store value from A register to stack position
 
 ## Addressing Modes
 - Implict
+- Immediate
 - Absolute
 
 # STB
@@ -149,6 +150,7 @@ Store value from B register to stack position
 
 ## Addressing Modes
 - Implict
+- Immediate
 - Absolute
 
 # STC
@@ -156,13 +158,7 @@ Store value from C register to stack position
 
 ## Addressing Modes
 - Implict
-- Absolute
-
-# STX
-Store value from X register to stack position
-
-## Addressing Modes
-- Implict
+- Immediate
 - Absolute
 
 # STY
@@ -170,6 +166,15 @@ Store value from Y register to stack position
 
 ## Addressing Modes
 - Implict
+- Immediate
+- Absolute
+
+# STX
+Store value from X register to stack position
+
+## Addressing Modes
+- Implict
+- Immediate
 - Absolute
 
 # EQ
