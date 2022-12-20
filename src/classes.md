@@ -23,7 +23,7 @@ class Test<T> {
 ```ellie
 class Test {
     co(x) {
-        this.x = x;
+        self.x = x;
     }
     v x : int;
 }

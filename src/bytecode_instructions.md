@@ -21,6 +21,8 @@
   - Get data from stack position and get index of it
 - AbsoluteProperty
   - Get data from stack position and get property of it
+- Paramater
+  - Get data from parameter register
 
 
 ## All Instructions
@@ -84,6 +86,7 @@ Load value to A register
 - IndirectY
 - AbsoluteIndex
 - AbsoluteProperty
+- Paramater
 
 # LDB
 Load value to B register
@@ -97,6 +100,7 @@ Load value to B register
 - IndirectY
 - AbsoluteIndex
 - AbsoluteProperty
+- Paramater
 
 # LDC
 Load value to C register
@@ -110,6 +114,7 @@ Load value to C register
 - IndirectY
 - AbsoluteIndex
 - AbsoluteProperty
+- Paramater
 
 # LDX
 Load value to X register
@@ -123,6 +128,7 @@ Load value to X register
 - IndirectY
 - AbsoluteIndex
 - AbsoluteProperty
+- Paramater
 
 # LDY
 Load value to A register
@@ -136,6 +142,7 @@ Load value to A register
 - IndirectX
 - AbsoluteIndex
 - AbsoluteProperty
+- Paramater
 
 # STA
 Store value from A register to stack position
@@ -144,6 +151,7 @@ Store value from A register to stack position
 - Implict
 - Immediate
 - Absolute
+- Paramater
 
 # STB
 Store value from B register to stack position
@@ -152,6 +160,7 @@ Store value from B register to stack position
 - Implict
 - Immediate
 - Absolute
+- Paramater
 
 # STC
 Store value from C register to stack position
@@ -160,6 +169,7 @@ Store value from C register to stack position
 - Implict
 - Immediate
 - Absolute
+- Paramater
 
 # STY
 Store value from Y register to stack position
@@ -168,6 +178,7 @@ Store value from Y register to stack position
 - Implict
 - Immediate
 - Absolute
+- Paramater
 
 # STX
 Store value from X register to stack position

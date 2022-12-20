@@ -6,6 +6,7 @@
     * [File Extensions](./file_extensions.md)
     * [EllieC](./elliec.md)
     * [EllieVM](./ellievm.md)
+    * [EllieFMT](./elliefmt.md)
     * [Lia - The package manager](./lia.md)
 - [Lia](./lia.md)
     *  [Installation](./liaInstallation.md)

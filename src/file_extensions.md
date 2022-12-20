@@ -3,26 +3,25 @@
 | Extension | Description                      |
 | --------- | -------------------------------- |
 | ei        | Ellie default file extension     |
-| eiz       | Ellie precompile package         |
-| eib       | Ellie bytecode package           |
-| eia       | Ellie bytecode assembly          |
-| eir       | Ellie bytecode assembly text     |
-| eih       | Ellie debug headers              |
+| eib       | Ellie compiled package           |
+| eic       | Ellie bytecode executable binary |
+| eia       | Ellie bytecode executable text   |
+| eig       | Ellie bytecode debug info file   |
 
 ## `.ei`
 Ellie default file extension. Bare code contained in this file.
 
-## `.eiz`
-Ellie precompiled package. This package contains raw `ellie_core` language items.
-
 ## `.eib`
-Ellie bytecode package. This package contains bytecode and package informations.
+Ellie precompiled package.
+
+## `.eic`
+Ellie bytecode binary executable.
 
 ## `.eia`
-Ellie bytecode assembly. This package contains assembly code.
+Ellie bytecode text file
 
-## `.eir`
-Ellie bytecode assembly text. This package contains assembly code.
+## `.eig`
+Ellie bytecode debug information. This file helps vm to resolve errors beyond stack locations
 
 ## `.eih`
 Ellie debug headers. This package contains debug headers. For tracking the source code location.
