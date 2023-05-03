@@ -13,9 +13,8 @@ Ellie has leveling system on target environments. Packages with matching levels 
 | 0     | Windows     | x86, ARM, x64     |
 | 0     | Linux       | x86, ARM, x64     |
 | 2     | Redox       | x86               |
-| 0     | MacOS       | x86, ARM, x64     |
-| 1     | Metal       | stm32f1xx         |
-| 1     | Metal       | CortexM           |
+| 0     | MacOS       | ARM, x64          |
+| 1     | Metal       | ARM, RISC-V, x64  |
 
 ## FFI Interface
 Ellie has a [Foreign Function Interface](./ffi.md) that allows you to call C functions from your code. Also you can call Ellie functions from C.

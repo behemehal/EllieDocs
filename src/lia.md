@@ -4,3 +4,5 @@ Lia is the package manager for Ellie. Also version manager for ellie.
 - [Installation](./liaInstallation.md)
 - [Usage](./liaUsage.md)
 - [Deep Dive](./liaDeepDive.md)
+
+# Lia will be re-written in Ellie soon.

@@ -7,6 +7,12 @@
   - Load immediate value
 - Absolute
   - Get data from stack position
+- AbsoluteIndex
+  - Get data from from pointer[ index pointer ]
+- AbsoluteProperty
+  - Get data from array type's property
+- AbsoluteStatic
+  - Get data from static program
 - IndirectA
   - Load A register value
 - IndirectB
@@ -17,13 +23,6 @@
   - Load X register value
 - IndirectY
   - Load Y register value
-- AbsoluteIndex
-  - Get data from stack position and get index of it
-- AbsoluteProperty
-  - Get data from stack position and get property of it
-- Paramater
-  - Get data from parameter register
-
 
 ## All Instructions
 
@@ -80,13 +79,13 @@ Load value to A register
 ## Addressing Modes
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
+- AbsoluteStatic
 - IndirectB
 - IndirectC
 - IndirectX
 - IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
-- Paramater
 
 # LDB
 Load value to B register
@@ -94,12 +93,13 @@ Load value to B register
 ## Addressing Modes
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
+- AbsoluteStatic
 - IndirectA
 - IndirectC
 - IndirectX
 - IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
 - Paramater
 
 # LDC
@@ -108,13 +108,13 @@ Load value to C register
 ## Addressing Modes
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
+- AbsoluteStatic
 - IndirectA
 - IndirectB
 - IndirectX
 - IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
-- Paramater
 
 # LDX
 Load value to X register
@@ -122,13 +122,13 @@ Load value to X register
 ## Addressing Modes
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
+- AbsoluteStatic
 - IndirectA
 - IndirectB
 - IndirectC
 - IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
-- Paramater
 
 # LDY
 Load value to A register
@@ -136,13 +136,13 @@ Load value to A register
 ## Addressing Modes
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
+- AbsoluteStatic
 - IndirectA
 - IndirectB
 - IndirectC
 - IndirectX
-- AbsoluteIndex
-- AbsoluteProperty
-- Paramater
 
 # STA
 Store value from A register to stack position
@@ -151,7 +151,8 @@ Store value from A register to stack position
 - Implict
 - Immediate
 - Absolute
-- Paramater
+- AbsoluteIndex
+- AbsoluteProperty
 
 # STB
 Store value from B register to stack position
@@ -160,7 +161,8 @@ Store value from B register to stack position
 - Implict
 - Immediate
 - Absolute
-- Paramater
+- AbsoluteIndex
+- AbsoluteProperty
 
 # STC
 Store value from C register to stack position
@@ -169,7 +171,8 @@ Store value from C register to stack position
 - Implict
 - Immediate
 - Absolute
-- Paramater
+- AbsoluteIndex
+- AbsoluteProperty
 
 # STY
 Store value from Y register to stack position
@@ -178,7 +181,8 @@ Store value from Y register to stack position
 - Implict
 - Immediate
 - Absolute
-- Paramater
+- AbsoluteIndex
+- AbsoluteProperty
 
 # STX
 Store value from X register to stack position
@@ -187,6 +191,8 @@ Store value from X register to stack position
 - Implict
 - Immediate
 - Absolute
+- AbsoluteIndex
+- AbsoluteProperty
 
 # EQ
 Compare equality on B and C registers and set A register to 1 if equal, 0 otherwise
@@ -272,20 +278,14 @@ Perform modulus on B and C registers and set A register to result
 ## Addressing Modes
 - Implict
 
-# INC
-Increment A register
-
-## Addressing Modes
-- Implict
-
-# DEC
-Decrement A register
-
-## Addressing Modes
-- Implict
-
 # JMP
 Jump to address
+
+## Addressing Modes
+- Absolute
+
+# JMPA
+Jump to address if A register is true
 
 ## Addressing Modes
 - Absolute
@@ -301,39 +301,36 @@ Return data
 
 ## Addressing Modes
 - Implict
-- Immidiate
-- Absolute
-- IndirectA
-- IndirectB
-- IndirectC
-- IndirectX
-- IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
-
-# AOL
-Alter locals for next instruction from other scope resets in next instruction
-
-## Addressing Modes
-- Absolute
 
 # PUSH
 Push A register value to array
 
 ## Addressing Modes
 - Absolute
+- AbsoluteIndex
+- IndirectA
 - IndirectB
 - IndirectC
 - IndirectX
 - IndirectY
-- AbsoluteIndex
-- AbsoluteProperty
 
-# LEN
+# SPUS
+Push char to allocated string
+
+## Addressing Modes
+- Absolute
+- AbsoluteIndex
+- IndirectA
+- IndirectB
+- IndirectC
+- IndirectX
+- IndirectY
+
+# LEN [DEPRECATED]
 Get length of array push to A register
 
 ## Addressing Modes
-- Implict
+- Absolute
 
 # A2I
 Convert A register to integer
@@ -377,23 +374,29 @@ Convert A register to bool
 ## Addressing Modes
 - Implict
 
-# JMPA
-Jump to address if A register is true
+# ARR
+Allocated stack array indicator, shows how many items are in array next [size] instructions will be array
 
 ## Addressing Modes
-- Absolute
+- Implict
+
+# STR
+Allocate string on heap register its reference in stack memory
+
+## Addressing Modes
+- Implict
+
+# SAR
+To-be removed
+
+## Addressing Modes
+- Immediate
 
 # POPS
 Pops last stack location
 
 ## Addressing Modes
 - Implict
-
-# ACP
-Alter cursor position exclude next instruction
-
-## Addressing Modes
-- Absolute
 
 # BRK
 Remove stack
@@ -406,3 +409,21 @@ Call native function in VM
 
 ## Addressing Modes
 - Immediate
+
+# CO [DEPRECATED]
+Construct class
+
+## Addressing Modes
+- Absolute
+
+# FN
+Function definition, if active stack does not match with FN's absolute address then it will be ignored and skipped to end of it
+
+## Addressing Modes
+- Immediate
+
+# DEA
+Deallocate memory
+
+## Addressing Modes
+- Absolute
