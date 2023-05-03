@@ -59,8 +59,6 @@
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
-        <link rel="stylesheet" href="ellie-light-highlight.css">
-        <link rel="stylesheet" href="ellie-dark-highlight.css">
 
 
         <!-- Custom theme stylesheets -->
@@ -181,57 +179,59 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p>Rev: 3
-Auto builded from <code>instructions.csv</code> by <code>reassembler.js</code>
-| Instruction | Implicit | Immediate | Absolute | Absolute Index | Absolute Property | IndirectA | IndirectB | IndirectC | IndirectX | IndirectY | Parameter |
-| ----------- | -------- | --------- | -------- | -------------- | ----------------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| lda         |    --    |    0x01   |   0x02   |      0x07      |        0x08       |     --    |    0x03   |    0x04   |    0x05   |    0x06   |    0x09   |
-| ldb         |    --    |    0x0a   |   0x0b   |      0x10      |        0x11       |    0x0c   |     --    |    0x0d   |    0x0e   |    0x0f   |    0x12   |
-| ldc         |    --    |    0x13   |   0x14   |      0x19      |        0x1a       |    0x15   |    0x16   |     --    |    0x17   |    0x18   |    0x1b   |
-| ldx         |    --    |    0x1c   |   0x1d   |      0x22      |        0x23       |    0x1e   |    0x1f   |    0x20   |     --    |    0x21   |    0x24   |
-| ldy         |    --    |    0x25   |   0x26   |      0x2b      |        0x2c       |    0x27   |    0x28   |    0x29   |    0x2a   |     --    |    0x2d   |
-| sta         |   0x2e   |    0x2f   |   0x30   |      0x31      |        0x32       |     --    |     --    |     --    |     --    |     --    |    0x33   |
-| stb         |   0x34   |    0x35   |   0x36   |      0x37      |        0x38       |     --    |     --    |     --    |     --    |     --    |    0x39   |
-| stc         |   0x3a   |    0x3b   |   0x3c   |      0x3d      |        0x3e       |     --    |     --    |     --    |     --    |     --    |    0x3f   |
-| stx         |   0x40   |    0x41   |   0x42   |      0x43      |        0x44       |     --    |     --    |     --    |     --    |     --    |     --    |
-| sty         |   0x45   |    0x46   |   0x47   |      0x48      |        0x49       |     --    |     --    |     --    |     --    |     --    |    0x4a   |
-| eq          |   0x4b   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ne          |   0x4c   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| gt          |   0x4d   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| lt          |   0x4e   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| gq          |   0x4f   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| lq          |   0x50   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| and         |   0x51   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| or          |   0x52   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| add         |   0x53   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| sub         |   0x54   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| mul         |   0x55   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| exp         |   0x56   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| div         |   0x57   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| mod         |   0x58   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| inc         |   0x59   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| dec         |   0x5a   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| jmp         |    --    |     --    |   0x5b   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| call        |    --    |     --    |   0x5c   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ret         |   0x5d   |    0x5e   |   0x5f   |      0x65      |        0x66       |    0x60   |    0x61   |    0x62   |    0x63   |    0x64   |     --    |
-| ugr         |   0x67   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ulr         |   0x68   |     --    |   0x69   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| push        |    --    |     --    |   0x6a   |      0x70      |        0x71       |    0x6b   |    0x6c   |    0x6d   |    0x6e   |    0x6f   |     --    |
-| len         |   0x72   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2i         |   0x73   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2f         |   0x74   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2d         |   0x75   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2b         |   0x76   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2s         |   0x77   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2c         |   0x78   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2o         |   0x79   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| jmpa        |    --    |     --    |   0x7a   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| pops        |   0x7b   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| acp         |    --    |     --    |   0x7c   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| brk         |   0x7d   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| calln       |    --    |    0x7e   |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| co          |    --    |     --    |   0x7f   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| fn          |    --    |    0x80   |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |</p>
+                        <h1 id="instructions"><a class="header" href="#instructions">Instructions</a></h1>
+<h2 id="rev-3"><a class="header" href="#rev-3">Rev: 3</a></h2>
+<table><thead><tr><th>Instruction</th><th>Implicit</th><th>Immediate</th><th>Absolute</th><th>AbsoluteIndex</th><th>AbsoluteProperty</th><th>AbsoluteStatic</th><th>IndirectA</th><th>IndirectB</th><th>IndirectC</th><th>IndirectX</th><th>IndirectY</th></tr></thead><tbody>
+<tr><td>LDA</td><td>-</td><td>0x1</td><td>0x2</td><td>0x3</td><td>0x4</td><td>0x5</td><td>-</td><td>0x6</td><td>0x7</td><td>0x8</td><td>0x9</td></tr>
+<tr><td>LDB</td><td>-</td><td>0xa</td><td>0xb</td><td>0xc</td><td>0xd</td><td>0xe</td><td>0xf</td><td>-</td><td>0x10</td><td>0x11</td><td>0x12</td></tr>
+<tr><td>LDC</td><td>-</td><td>0x13</td><td>0x14</td><td>0x15</td><td>0x16</td><td>0x17</td><td>0x18</td><td>0x19</td><td>-</td><td>0x1a</td><td>0x1b</td></tr>
+<tr><td>LDX</td><td>-</td><td>0x1c</td><td>0x1d</td><td>0x1e</td><td>0x1f</td><td>0x20</td><td>0x21</td><td>0x22</td><td>0x23</td><td>-</td><td>0x24</td></tr>
+<tr><td>LDY</td><td>-</td><td>0x25</td><td>0x26</td><td>0x27</td><td>0x28</td><td>0x29</td><td>0x2a</td><td>0x2b</td><td>0x2c</td><td>0x2d</td><td>-</td></tr>
+<tr><td>STA</td><td>0x2e</td><td>0x2f</td><td>0x30</td><td>0x31</td><td>0x32</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STB</td><td>0x33</td><td>0x34</td><td>0x35</td><td>0x36</td><td>0x37</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STC</td><td>0x38</td><td>0x39</td><td>0x3a</td><td>0x3b</td><td>0x3c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STX</td><td>0x3d</td><td>0x3e</td><td>0x3f</td><td>0x40</td><td>0x41</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STY</td><td>0x42</td><td>0x43</td><td>0x44</td><td>0x45</td><td>0x46</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>EQ</td><td>0x47</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>NE</td><td>0x48</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>GT</td><td>0x49</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>LT</td><td>0x4a</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>GQ</td><td>0x4b</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>LQ</td><td>0x4c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>AND</td><td>0x4d</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>OR</td><td>0x4e</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>ADD</td><td>0x4f</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>SUB</td><td>0x50</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>MUL</td><td>0x51</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>EXP</td><td>0x52</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>DIV</td><td>0x53</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>MOD</td><td>0x54</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>JMP</td><td>-</td><td>-</td><td>0x55</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>JMPA</td><td>-</td><td>-</td><td>0x56</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CALL</td><td>-</td><td>-</td><td>0x57</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>RET</td><td>0x58</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>PUSH</td><td>-</td><td>-</td><td>0x59</td><td>0x5a</td><td>-</td><td>-</td><td>0x5b</td><td>0x5c</td><td>0x5d</td><td>0x5e</td><td>0x5f</td></tr>
+<tr><td>SPUS</td><td>-</td><td>-</td><td>0x60</td><td>0x61</td><td>-</td><td>-</td><td>0x62</td><td>0x63</td><td>0x64</td><td>0x65</td><td>0x66</td></tr>
+<tr><td>LEN</td><td>-</td><td>-</td><td>0x67</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2I</td><td>0x68</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2F</td><td>0x69</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2D</td><td>0x6a</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2B</td><td>0x6b</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2S</td><td>0x6c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2C</td><td>0x6d</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2O</td><td>0x6e</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>ARR</td><td>0x6f</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STR</td><td>0x70</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>SAR</td><td>-</td><td>0x71</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>POPS</td><td>-</td><td>-</td><td>0x72</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>BRK</td><td>0x73</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CALLN</td><td>-</td><td>-</td><td>0x74</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CO</td><td>-</td><td>-</td><td>0x75</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>FN</td><td>-</td><td>0x76</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>DEA</td><td>-</td><td>-</td><td>0x77</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody></table>
+<p><em><strong>Note:</strong> Revision is incremented when the instruction set changes.</em></p>
+<p><em><em>This file is auto generated from <code>instructions.json</code> by `reAssembler.js</em></em></p>
 
                     </main>
 

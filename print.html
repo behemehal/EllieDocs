@@ -60,8 +60,6 @@
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
-        <link rel="stylesheet" href="ellie-light-highlight.css">
-        <link rel="stylesheet" href="ellie-dark-highlight.css">
 
 
         <!-- Custom theme stylesheets -->
@@ -187,10 +185,13 @@
 <h2 id="here-is-the-content-of-the-docs"><a class="header" href="#here-is-the-content-of-the-docs">Here is the content of the docs</a></h2>
 <ul>
 <li><a href="what_is_ellie.html">What is ellie</a></li>
-<li><a href="file_structure.html">File Structure</a></li>
+<li><a href="file_extensions.html">File Extensions</a></li>
+<li><a href="elliec.html">EllieC</a></li>
+<li><a href="ellievm.html">EllieVM</a></li>
+<li><a href="elliefmt.html">EllieFMT</a></li>
 <li><a href="lia.html">Lia - The package manager</a></li>
 </ul>
-<p><code>v1.7.0</code></p>
+<p><code>v1.8.0</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="what-is-ellie"><a class="header" href="#what-is-ellie">What is ellie</a></h1>
 <p>Ellie is a type-safe programing language that runs on embedded and sandboxed environments. </p>
 <h2 id="package-management"><a class="header" href="#package-management">Package Management</a></h2>
@@ -202,9 +203,8 @@
 <tr><td>0</td><td>Windows</td><td>x86, ARM, x64</td></tr>
 <tr><td>0</td><td>Linux</td><td>x86, ARM, x64</td></tr>
 <tr><td>2</td><td>Redox</td><td>x86</td></tr>
-<tr><td>0</td><td>MacOS</td><td>x86, ARM, x64</td></tr>
-<tr><td>1</td><td>Metal</td><td>stm32f1xx</td></tr>
-<tr><td>1</td><td>Metal</td><td>CortexM</td></tr>
+<tr><td>0</td><td>MacOS</td><td>ARM, x64</td></tr>
+<tr><td>1</td><td>Metal</td><td>ARM, RISC-V, x64</td></tr>
 </tbody></table>
 <h2 id="ffi-interface"><a class="header" href="#ffi-interface">FFI Interface</a></h2>
 <p>Ellie has a <a href="./ffi.html">Foreign Function Interface</a> that allows you to call C functions from your code. Also you can call Ellie functions from C.</p>
@@ -387,6 +387,7 @@
 <li><a href="./liaUsage.html">Usage</a></li>
 <li><a href="./liaDeepDive.html">Deep Dive</a></li>
 </ul>
+<h1 id="lia-will-be-re-written-in-ellie-soon"><a class="header" href="#lia-will-be-re-written-in-ellie-soon">Lia will be re-written in Ellie soon.</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lia---the-package-manager-1"><a class="header" href="#lia---the-package-manager-1">Lia - The package manager</a></h1>
 <p>Lia is the package manager for Ellie. Also version manager for ellie.</p>
 <ul>
@@ -394,6 +395,7 @@
 <li><a href="./liaUsage.html">Usage</a></li>
 <li><a href="./liaDeepDive.html">Deep Dive</a></li>
 </ul>
+<h1 id="lia-will-be-re-written-in-ellie-soon-1"><a class="header" href="#lia-will-be-re-written-in-ellie-soon-1">Lia will be re-written in Ellie soon.</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <h2 id="windows-not-supported"><a class="header" href="#windows-not-supported">Windows (Not supported)</a></h2>
 <pre><code class="language-sh">Not yet implemented
@@ -600,23 +602,13 @@ dependencies:
 </code></pre>
 </li>
 <li>Array
-<pre><code class="language-ellie">    v letters : [char, 5] = [
+<pre><code class="language-ellie">    v letters : [char, *] = [
         'e',
         'l',
         'l',
         'i',
         'e'
     ];
-</code></pre>
-</li>
-<li>Vector
-<pre><code class="language-ellie">    v letters : [char, 5] = {
-        'e',
-        'l',
-        'l',
-        'i',
-        'e'
-    };
 </code></pre>
 </li>
 <li>Collective
@@ -751,19 +743,66 @@ fn test(text: string) {
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="deep-dive-1"><a class="header" href="#deep-dive-1">Deep Dive</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="building-ellie"><a class="header" href="#building-ellie">Building Ellie</a></h1>
-<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h1 id="package-features"><a class="header" href="#package-features">Package Features</a></h1>
+<h2 id="packages"><a class="header" href="#packages">Packages</a></h2>
 <ul>
-<li><code>standard_rules</code> - Enable standard rules check on syntax</li>
-<li><code>build-cli</code> - Build the CLI apps [<code>elliec</code>, <code>ellievm</code>, <code>elliefmt</code>]</li>
-<li><code>ellie_asist</code> - Assistments for type and syntax errors.</li>
+<li><code>ellie_engine</code> - Ellie Engine contains tokenizer, parser, bytecode, fmt, vm and other core components.</li>
+<li><code>elliec</code> - EllieC is compiler binary for Ellie.</li>
+<li><code>ellievm</code> - EllieVM is virtual machine binary for Ellie.</li>
+<li><code>elliefmt</code> - EllieFmt is formatter binary for Ellie.</li>
 </ul>
-<p>If you want to use <code>EllieAssist</code>, you should clone the <a href="https://github.com/behemehal/EllieAssist">repository</a> to main directory. </p>
-<h2 id="default-features"><a class="header" href="#default-features">Default Features</a></h2>
+<h2 id="ellie-engine"><a class="header" href="#ellie-engine">ellie-engine</a></h2>
 <ul>
-<li><code>standard_rules</code></li>
-<li>`build-cli``</li>
+<li>
+<h3 id="features"><a class="header" href="#features">Features</a></h3>
+<ul>
+<li>
+<h4 id="compiler"><a class="header" href="#compiler">compiler</a></h4>
+This feature enables only compiler related components. Imports following libraries <code>ellie_tokenizer</code>, <code>ellie_parser</code>, <code>ellie_bytecode</code> and <code>ellie_core/compiler_utils</code>.</li>
+<li>
+<h4 id="vm"><a class="header" href="#vm">vm</a></h4>
+This feature enables only vm related components. Imports following libraries <code>ellie_vm</code>, <code>ellie_vm/std</code>.</li>
+<li>
+<h4 id="fmt"><a class="header" href="#fmt">fmt</a></h4>
+This feature enables only fmt related components. Imports following libraries <code>ellie_fmt</code>.</li>
+<li>
+<h4 id="standard_rules"><a class="header" href="#standard_rules">standard_rules</a></h4>
+This feature enables standard rules check on syntax. Imports following libraries <code>ellie_parser/standard_rules</code>.</li>
+<li>
+<h4 id="cli-utils"><a class="header" href="#cli-utils">cli-utils</a></h4>
+This feature enables cli utils. Imports following libraries <code>ellie_renderer_utils/cli-utils</code>.</li>
+<li>
+<h4 id="b64"><a class="header" href="#b64">B64</a></h4>
+This feature selects x64 architecture. Imports following libraries <code>ellie_vm/B64</code>.</li>
+<li>
+<h4 id="b32"><a class="header" href="#b32">B32</a></h4>
+This feature selects x32 architecture. Imports following libraries <code>ellie_vm/B32</code>.</li>
+<li>
+<h4 id="b16"><a class="header" href="#b16">B16</a></h4>
+This feature selects x16 architecture. Imports following libraries <code>ellie_vm/B16</code>.</li>
 </ul>
-<p>By running <code>cargo build</code> command in default, you can build the <code>elliec</code>, <code>ellievm</code>, <code>elliefmt</code> binaries.</p>
+</li>
+</ul>
+<h1 id="tools"><a class="header" href="#tools">Tools</a></h1>
+<p>Ellie has tools relasing reAssembling bytecode instuctions, cleaning up repository and many more.</p>
+<ul>
+<li>
+<h3 id="clean_upsh--clean_upps1"><a class="header" href="#clean_upsh--clean_upps1"><code>clean_up.sh</code> | <code>clean_up.ps1</code></a></h3>
+<p>This script cleans up repository by removing all the compiled binaries and other files.</p>
+</li>
+<li>
+<h3 id="reassemblerjs"><a class="header" href="#reassemblerjs"><code>reAssembler.js</code></a></h3>
+<p>This script reAssembles <code>instruction.json</code> file to required <code>instruction_table.rs, instruction_utils.rs</code> and <code>instructions.md</code> files.</p>
+</li>
+<li>
+<h3 id="releasejs"><a class="header" href="#releasejs"><code>release.js</code></a></h3>
+<p>This script selected binaries and preapares output for release.</p>
+</li>
+<li>
+<h3 id="integration_test-crate"><a class="header" href="#integration_test-crate"><code>integration_test</code> crate</a></h3>
+<p>This crate contains integration tests for Ellie. You can test compiler, tokenizer, parser, vm and fmt using this crate.</p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bytecode"><a class="header" href="#bytecode">ByteCode</a></h1>
 <p>Ellie ByteCode is the binary representation of an Ellie program that can be executed by the VM.</p>
 <h1 id="contents"><a class="header" href="#contents">Contents</a></h1>
@@ -789,6 +828,21 @@ fn test(text: string) {
 <li>Get data from stack position</li>
 </ul>
 </li>
+<li>AbsoluteIndex
+<ul>
+<li>Get data from from pointer[ index pointer ]</li>
+</ul>
+</li>
+<li>AbsoluteProperty
+<ul>
+<li>Get data from array type’s property</li>
+</ul>
+</li>
+<li>AbsoluteStatic
+<ul>
+<li>Get data from static program</li>
+</ul>
+</li>
 <li>IndirectA
 <ul>
 <li>Load A register value</li>
@@ -812,21 +866,6 @@ fn test(text: string) {
 <li>IndirectY
 <ul>
 <li>Load Y register value</li>
-</ul>
-</li>
-<li>AbsoluteIndex
-<ul>
-<li>Get data from stack position and get index of it</li>
-</ul>
-</li>
-<li>AbsoluteProperty
-<ul>
-<li>Get data from stack position and get property of it</li>
-</ul>
-</li>
-<li>Paramater
-<ul>
-<li>Get data from parameter register</li>
 </ul>
 </li>
 </ul>
@@ -883,13 +922,13 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldb"><a class="header" href="#ldb">LDB</a></h1>
 <p>Load value to B register</p>
@@ -897,12 +936,13 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 <li>Paramater</li>
 </ul>
 <h1 id="ldc"><a class="header" href="#ldc">LDC</a></h1>
@@ -911,13 +951,13 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldx"><a class="header" href="#ldx">LDX</a></h1>
 <p>Load value to X register</p>
@@ -925,13 +965,13 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldy"><a class="header" href="#ldy">LDY</a></h1>
 <p>Load value to A register</p>
@@ -939,13 +979,13 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="sta"><a class="header" href="#sta">STA</a></h1>
 <p>Store value from A register to stack position</p>
@@ -954,7 +994,8 @@ fn test(text: string) {
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stb"><a class="header" href="#stb">STB</a></h1>
 <p>Store value from B register to stack position</p>
@@ -963,7 +1004,8 @@ fn test(text: string) {
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stc"><a class="header" href="#stc">STC</a></h1>
 <p>Store value from C register to stack position</p>
@@ -972,7 +1014,8 @@ fn test(text: string) {
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="sty"><a class="header" href="#sty">STY</a></h1>
 <p>Store value from Y register to stack position</p>
@@ -981,7 +1024,8 @@ fn test(text: string) {
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stx"><a class="header" href="#stx">STX</a></h1>
 <p>Store value from X register to stack position</p>
@@ -990,6 +1034,8 @@ fn test(text: string) {
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="eq"><a class="header" href="#eq">EQ</a></h1>
 <p>Compare equality on B and C registers and set A register to 1 if equal, 0 otherwise</p>
@@ -1075,128 +1121,125 @@ fn test(text: string) {
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="inc"><a class="header" href="#inc">INC</a></h1>
-<p>Increment A register</p>
-<h2 id="addressing-modes-25"><a class="header" href="#addressing-modes-25">Addressing Modes</a></h2>
-<ul>
-<li>Implict</li>
-</ul>
-<h1 id="dec"><a class="header" href="#dec">DEC</a></h1>
-<p>Decrement A register</p>
-<h2 id="addressing-modes-26"><a class="header" href="#addressing-modes-26">Addressing Modes</a></h2>
-<ul>
-<li>Implict</li>
-</ul>
 <h1 id="jmp"><a class="header" href="#jmp">JMP</a></h1>
 <p>Jump to address</p>
-<h2 id="addressing-modes-27"><a class="header" href="#addressing-modes-27">Addressing Modes</a></h2>
+<h2 id="addressing-modes-25"><a class="header" href="#addressing-modes-25">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
+</ul>
+<h1 id="jmpa"><a class="header" href="#jmpa">JMPA</a></h1>
+<p>Jump to address if A register is true</p>
+<h2 id="addressing-modes-26"><a class="header" href="#addressing-modes-26">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
 </ul>
 <h1 id="call"><a class="header" href="#call">CALL</a></h1>
 <p>Call function</p>
-<h2 id="addressing-modes-28"><a class="header" href="#addressing-modes-28">Addressing Modes</a></h2>
+<h2 id="addressing-modes-27"><a class="header" href="#addressing-modes-27">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
 </ul>
 <h1 id="ret"><a class="header" href="#ret">RET</a></h1>
 <p>Return data</p>
-<h2 id="addressing-modes-29"><a class="header" href="#addressing-modes-29">Addressing Modes</a></h2>
+<h2 id="addressing-modes-28"><a class="header" href="#addressing-modes-28">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
-<li>Immidiate</li>
+</ul>
+<h1 id="push"><a class="header" href="#push">PUSH</a></h1>
+<p>Push A register value to array</p>
+<h2 id="addressing-modes-29"><a class="header" href="#addressing-modes-29">Addressing Modes</a></h2>
+<ul>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 </ul>
-<h1 id="aol"><a class="header" href="#aol">AOL</a></h1>
-<p>Alter locals for next instruction from other scope resets in next instruction</p>
+<h1 id="spus"><a class="header" href="#spus">SPUS</a></h1>
+<p>Push char to allocated string</p>
 <h2 id="addressing-modes-30"><a class="header" href="#addressing-modes-30">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
-</ul>
-<h1 id="push"><a class="header" href="#push">PUSH</a></h1>
-<p>Push A register value to array</p>
-<h2 id="addressing-modes-31"><a class="header" href="#addressing-modes-31">Addressing Modes</a></h2>
-<ul>
-<li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 </ul>
-<h1 id="len"><a class="header" href="#len">LEN</a></h1>
+<h1 id="len-deprecated"><a class="header" href="#len-deprecated">LEN [DEPRECATED]</a></h1>
 <p>Get length of array push to A register</p>
-<h2 id="addressing-modes-32"><a class="header" href="#addressing-modes-32">Addressing Modes</a></h2>
+<h2 id="addressing-modes-31"><a class="header" href="#addressing-modes-31">Addressing Modes</a></h2>
 <ul>
-<li>Implict</li>
+<li>Absolute</li>
 </ul>
 <h1 id="a2i"><a class="header" href="#a2i">A2I</a></h1>
 <p>Convert A register to integer</p>
-<h2 id="addressing-modes-33"><a class="header" href="#addressing-modes-33">Addressing Modes</a></h2>
+<h2 id="addressing-modes-32"><a class="header" href="#addressing-modes-32">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2f"><a class="header" href="#a2f">A2F</a></h1>
 <p>Convert A register to float</p>
-<h2 id="addressing-modes-34"><a class="header" href="#addressing-modes-34">Addressing Modes</a></h2>
+<h2 id="addressing-modes-33"><a class="header" href="#addressing-modes-33">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2d"><a class="header" href="#a2d">A2D</a></h1>
 <p>Convert A register to double</p>
-<h2 id="addressing-modes-35"><a class="header" href="#addressing-modes-35">Addressing Modes</a></h2>
+<h2 id="addressing-modes-34"><a class="header" href="#addressing-modes-34">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2b"><a class="header" href="#a2b">A2B</a></h1>
 <p>Convert A register to byte</p>
-<h2 id="addressing-modes-36"><a class="header" href="#addressing-modes-36">Addressing Modes</a></h2>
+<h2 id="addressing-modes-35"><a class="header" href="#addressing-modes-35">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2s"><a class="header" href="#a2s">A2S</a></h1>
 <p>Convert A register to string</p>
-<h2 id="addressing-modes-37"><a class="header" href="#addressing-modes-37">Addressing Modes</a></h2>
+<h2 id="addressing-modes-36"><a class="header" href="#addressing-modes-36">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2c"><a class="header" href="#a2c">A2C</a></h1>
 <p>Convert A register to char</p>
-<h2 id="addressing-modes-38"><a class="header" href="#addressing-modes-38">Addressing Modes</a></h2>
+<h2 id="addressing-modes-37"><a class="header" href="#addressing-modes-37">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2o"><a class="header" href="#a2o">A2O</a></h1>
 <p>Convert A register to bool</p>
+<h2 id="addressing-modes-38"><a class="header" href="#addressing-modes-38">Addressing Modes</a></h2>
+<ul>
+<li>Implict</li>
+</ul>
+<h1 id="arr"><a class="header" href="#arr">ARR</a></h1>
+<p>Allocated stack array indicator, shows how many items are in array next [size] instructions will be array</p>
 <h2 id="addressing-modes-39"><a class="header" href="#addressing-modes-39">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="jmpa"><a class="header" href="#jmpa">JMPA</a></h1>
-<p>Jump to address if A register is true</p>
+<h1 id="str"><a class="header" href="#str">STR</a></h1>
+<p>Allocate string on heap register its reference in stack memory</p>
 <h2 id="addressing-modes-40"><a class="header" href="#addressing-modes-40">Addressing Modes</a></h2>
-<ul>
-<li>Absolute</li>
-</ul>
-<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
-<p>Pops last stack location</p>
-<h2 id="addressing-modes-41"><a class="header" href="#addressing-modes-41">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="acp"><a class="header" href="#acp">ACP</a></h1>
-<p>Alter cursor position exclude next instruction</p>
+<h1 id="sar"><a class="header" href="#sar">SAR</a></h1>
+<p>To-be removed</p>
+<h2 id="addressing-modes-41"><a class="header" href="#addressing-modes-41">Addressing Modes</a></h2>
+<ul>
+<li>Immediate</li>
+</ul>
+<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
+<p>Pops last stack location</p>
 <h2 id="addressing-modes-42"><a class="header" href="#addressing-modes-42">Addressing Modes</a></h2>
 <ul>
-<li>Absolute</li>
+<li>Implict</li>
 </ul>
 <h1 id="brk"><a class="header" href="#brk">BRK</a></h1>
 <p>Remove stack</p>
@@ -1210,57 +1253,77 @@ fn test(text: string) {
 <ul>
 <li>Immediate</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><p>Rev: 3
-Auto builded from <code>instructions.csv</code> by <code>reassembler.js</code>
-| Instruction | Implicit | Immediate | Absolute | Absolute Index | Absolute Property | IndirectA | IndirectB | IndirectC | IndirectX | IndirectY | Parameter |
-| ----------- | -------- | --------- | -------- | -------------- | ----------------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| lda         |    --    |    0x01   |   0x02   |      0x07      |        0x08       |     --    |    0x03   |    0x04   |    0x05   |    0x06   |    0x09   |
-| ldb         |    --    |    0x0a   |   0x0b   |      0x10      |        0x11       |    0x0c   |     --    |    0x0d   |    0x0e   |    0x0f   |    0x12   |
-| ldc         |    --    |    0x13   |   0x14   |      0x19      |        0x1a       |    0x15   |    0x16   |     --    |    0x17   |    0x18   |    0x1b   |
-| ldx         |    --    |    0x1c   |   0x1d   |      0x22      |        0x23       |    0x1e   |    0x1f   |    0x20   |     --    |    0x21   |    0x24   |
-| ldy         |    --    |    0x25   |   0x26   |      0x2b      |        0x2c       |    0x27   |    0x28   |    0x29   |    0x2a   |     --    |    0x2d   |
-| sta         |   0x2e   |    0x2f   |   0x30   |      0x31      |        0x32       |     --    |     --    |     --    |     --    |     --    |    0x33   |
-| stb         |   0x34   |    0x35   |   0x36   |      0x37      |        0x38       |     --    |     --    |     --    |     --    |     --    |    0x39   |
-| stc         |   0x3a   |    0x3b   |   0x3c   |      0x3d      |        0x3e       |     --    |     --    |     --    |     --    |     --    |    0x3f   |
-| stx         |   0x40   |    0x41   |   0x42   |      0x43      |        0x44       |     --    |     --    |     --    |     --    |     --    |     --    |
-| sty         |   0x45   |    0x46   |   0x47   |      0x48      |        0x49       |     --    |     --    |     --    |     --    |     --    |    0x4a   |
-| eq          |   0x4b   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ne          |   0x4c   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| gt          |   0x4d   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| lt          |   0x4e   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| gq          |   0x4f   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| lq          |   0x50   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| and         |   0x51   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| or          |   0x52   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| add         |   0x53   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| sub         |   0x54   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| mul         |   0x55   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| exp         |   0x56   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| div         |   0x57   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| mod         |   0x58   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| inc         |   0x59   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| dec         |   0x5a   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| jmp         |    --    |     --    |   0x5b   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| call        |    --    |     --    |   0x5c   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ret         |   0x5d   |    0x5e   |   0x5f   |      0x65      |        0x66       |    0x60   |    0x61   |    0x62   |    0x63   |    0x64   |     --    |
-| ugr         |   0x67   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| ulr         |   0x68   |     --    |   0x69   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| push        |    --    |     --    |   0x6a   |      0x70      |        0x71       |    0x6b   |    0x6c   |    0x6d   |    0x6e   |    0x6f   |     --    |
-| len         |   0x72   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2i         |   0x73   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2f         |   0x74   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2d         |   0x75   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2b         |   0x76   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2s         |   0x77   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2c         |   0x78   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| a2o         |   0x79   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| jmpa        |    --    |     --    |   0x7a   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| pops        |   0x7b   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| acp         |    --    |     --    |   0x7c   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| brk         |   0x7d   |     --    |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| calln       |    --    |    0x7e   |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| co          |    --    |     --    |   0x7f   |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |
-| fn          |    --    |    0x80   |    --    |       --       |         --        |     --    |     --    |     --    |     --    |     --    |     --    |</p>
+<h1 id="co-deprecated"><a class="header" href="#co-deprecated">CO [DEPRECATED]</a></h1>
+<p>Construct class</p>
+<h2 id="addressing-modes-45"><a class="header" href="#addressing-modes-45">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
+</ul>
+<h1 id="fn"><a class="header" href="#fn">FN</a></h1>
+<p>Function definition, if active stack does not match with FN’s absolute address then it will be ignored and skipped to end of it</p>
+<h2 id="addressing-modes-46"><a class="header" href="#addressing-modes-46">Addressing Modes</a></h2>
+<ul>
+<li>Immediate</li>
+</ul>
+<h1 id="dea"><a class="header" href="#dea">DEA</a></h1>
+<p>Deallocate memory</p>
+<h2 id="addressing-modes-47"><a class="header" href="#addressing-modes-47">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="instructions-1"><a class="header" href="#instructions-1">Instructions</a></h1>
+<h2 id="rev-3"><a class="header" href="#rev-3">Rev: 3</a></h2>
+<table><thead><tr><th>Instruction</th><th>Implicit</th><th>Immediate</th><th>Absolute</th><th>AbsoluteIndex</th><th>AbsoluteProperty</th><th>AbsoluteStatic</th><th>IndirectA</th><th>IndirectB</th><th>IndirectC</th><th>IndirectX</th><th>IndirectY</th></tr></thead><tbody>
+<tr><td>LDA</td><td>-</td><td>0x1</td><td>0x2</td><td>0x3</td><td>0x4</td><td>0x5</td><td>-</td><td>0x6</td><td>0x7</td><td>0x8</td><td>0x9</td></tr>
+<tr><td>LDB</td><td>-</td><td>0xa</td><td>0xb</td><td>0xc</td><td>0xd</td><td>0xe</td><td>0xf</td><td>-</td><td>0x10</td><td>0x11</td><td>0x12</td></tr>
+<tr><td>LDC</td><td>-</td><td>0x13</td><td>0x14</td><td>0x15</td><td>0x16</td><td>0x17</td><td>0x18</td><td>0x19</td><td>-</td><td>0x1a</td><td>0x1b</td></tr>
+<tr><td>LDX</td><td>-</td><td>0x1c</td><td>0x1d</td><td>0x1e</td><td>0x1f</td><td>0x20</td><td>0x21</td><td>0x22</td><td>0x23</td><td>-</td><td>0x24</td></tr>
+<tr><td>LDY</td><td>-</td><td>0x25</td><td>0x26</td><td>0x27</td><td>0x28</td><td>0x29</td><td>0x2a</td><td>0x2b</td><td>0x2c</td><td>0x2d</td><td>-</td></tr>
+<tr><td>STA</td><td>0x2e</td><td>0x2f</td><td>0x30</td><td>0x31</td><td>0x32</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STB</td><td>0x33</td><td>0x34</td><td>0x35</td><td>0x36</td><td>0x37</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STC</td><td>0x38</td><td>0x39</td><td>0x3a</td><td>0x3b</td><td>0x3c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STX</td><td>0x3d</td><td>0x3e</td><td>0x3f</td><td>0x40</td><td>0x41</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STY</td><td>0x42</td><td>0x43</td><td>0x44</td><td>0x45</td><td>0x46</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>EQ</td><td>0x47</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>NE</td><td>0x48</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>GT</td><td>0x49</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>LT</td><td>0x4a</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>GQ</td><td>0x4b</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>LQ</td><td>0x4c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>AND</td><td>0x4d</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>OR</td><td>0x4e</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>ADD</td><td>0x4f</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>SUB</td><td>0x50</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>MUL</td><td>0x51</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>EXP</td><td>0x52</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>DIV</td><td>0x53</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>MOD</td><td>0x54</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>JMP</td><td>-</td><td>-</td><td>0x55</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>JMPA</td><td>-</td><td>-</td><td>0x56</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CALL</td><td>-</td><td>-</td><td>0x57</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>RET</td><td>0x58</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>PUSH</td><td>-</td><td>-</td><td>0x59</td><td>0x5a</td><td>-</td><td>-</td><td>0x5b</td><td>0x5c</td><td>0x5d</td><td>0x5e</td><td>0x5f</td></tr>
+<tr><td>SPUS</td><td>-</td><td>-</td><td>0x60</td><td>0x61</td><td>-</td><td>-</td><td>0x62</td><td>0x63</td><td>0x64</td><td>0x65</td><td>0x66</td></tr>
+<tr><td>LEN</td><td>-</td><td>-</td><td>0x67</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2I</td><td>0x68</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2F</td><td>0x69</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2D</td><td>0x6a</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2B</td><td>0x6b</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2S</td><td>0x6c</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2C</td><td>0x6d</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>A2O</td><td>0x6e</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>ARR</td><td>0x6f</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>STR</td><td>0x70</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>SAR</td><td>-</td><td>0x71</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>POPS</td><td>-</td><td>-</td><td>0x72</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>BRK</td><td>0x73</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CALLN</td><td>-</td><td>-</td><td>0x74</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>CO</td><td>-</td><td>-</td><td>0x75</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>FN</td><td>-</td><td>0x76</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>DEA</td><td>-</td><td>-</td><td>0x77</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody></table>
+<p><em><strong>Note:</strong> Revision is incremented when the instruction set changes.</em></p>
+<p><em><em>This file is auto generated from <code>instructions.json</code> by `reAssembler.js</em></em></p>
 
                     </main>
 

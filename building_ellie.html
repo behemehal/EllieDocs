@@ -59,8 +59,6 @@
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
-        <link rel="stylesheet" href="ellie-light-highlight.css">
-        <link rel="stylesheet" href="ellie-dark-highlight.css">
 
 
         <!-- Custom theme stylesheets -->
@@ -182,19 +180,66 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="building-ellie"><a class="header" href="#building-ellie">Building Ellie</a></h1>
-<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h1 id="package-features"><a class="header" href="#package-features">Package Features</a></h1>
+<h2 id="packages"><a class="header" href="#packages">Packages</a></h2>
 <ul>
-<li><code>standard_rules</code> - Enable standard rules check on syntax</li>
-<li><code>build-cli</code> - Build the CLI apps [<code>elliec</code>, <code>ellievm</code>, <code>elliefmt</code>]</li>
-<li><code>ellie_asist</code> - Assistments for type and syntax errors.</li>
+<li><code>ellie_engine</code> - Ellie Engine contains tokenizer, parser, bytecode, fmt, vm and other core components.</li>
+<li><code>elliec</code> - EllieC is compiler binary for Ellie.</li>
+<li><code>ellievm</code> - EllieVM is virtual machine binary for Ellie.</li>
+<li><code>elliefmt</code> - EllieFmt is formatter binary for Ellie.</li>
 </ul>
-<p>If you want to use <code>EllieAssist</code>, you should clone the <a href="https://github.com/behemehal/EllieAssist">repository</a> to main directory. </p>
-<h2 id="default-features"><a class="header" href="#default-features">Default Features</a></h2>
+<h2 id="ellie-engine"><a class="header" href="#ellie-engine">ellie-engine</a></h2>
 <ul>
-<li><code>standard_rules</code></li>
-<li>`build-cli``</li>
+<li>
+<h3 id="features"><a class="header" href="#features">Features</a></h3>
+<ul>
+<li>
+<h4 id="compiler"><a class="header" href="#compiler">compiler</a></h4>
+This feature enables only compiler related components. Imports following libraries <code>ellie_tokenizer</code>, <code>ellie_parser</code>, <code>ellie_bytecode</code> and <code>ellie_core/compiler_utils</code>.</li>
+<li>
+<h4 id="vm"><a class="header" href="#vm">vm</a></h4>
+This feature enables only vm related components. Imports following libraries <code>ellie_vm</code>, <code>ellie_vm/std</code>.</li>
+<li>
+<h4 id="fmt"><a class="header" href="#fmt">fmt</a></h4>
+This feature enables only fmt related components. Imports following libraries <code>ellie_fmt</code>.</li>
+<li>
+<h4 id="standard_rules"><a class="header" href="#standard_rules">standard_rules</a></h4>
+This feature enables standard rules check on syntax. Imports following libraries <code>ellie_parser/standard_rules</code>.</li>
+<li>
+<h4 id="cli-utils"><a class="header" href="#cli-utils">cli-utils</a></h4>
+This feature enables cli utils. Imports following libraries <code>ellie_renderer_utils/cli-utils</code>.</li>
+<li>
+<h4 id="b64"><a class="header" href="#b64">B64</a></h4>
+This feature selects x64 architecture. Imports following libraries <code>ellie_vm/B64</code>.</li>
+<li>
+<h4 id="b32"><a class="header" href="#b32">B32</a></h4>
+This feature selects x32 architecture. Imports following libraries <code>ellie_vm/B32</code>.</li>
+<li>
+<h4 id="b16"><a class="header" href="#b16">B16</a></h4>
+This feature selects x16 architecture. Imports following libraries <code>ellie_vm/B16</code>.</li>
 </ul>
-<p>By running <code>cargo build</code> command in default, you can build the <code>elliec</code>, <code>ellievm</code>, <code>elliefmt</code> binaries.</p>
+</li>
+</ul>
+<h1 id="tools"><a class="header" href="#tools">Tools</a></h1>
+<p>Ellie has tools relasing reAssembling bytecode instuctions, cleaning up repository and many more.</p>
+<ul>
+<li>
+<h3 id="clean_upsh--clean_upps1"><a class="header" href="#clean_upsh--clean_upps1"><code>clean_up.sh</code> | <code>clean_up.ps1</code></a></h3>
+<p>This script cleans up repository by removing all the compiled binaries and other files.</p>
+</li>
+<li>
+<h3 id="reassemblerjs"><a class="header" href="#reassemblerjs"><code>reAssembler.js</code></a></h3>
+<p>This script reAssembles <code>instruction.json</code> file to required <code>instruction_table.rs, instruction_utils.rs</code> and <code>instructions.md</code> files.</p>
+</li>
+<li>
+<h3 id="releasejs"><a class="header" href="#releasejs"><code>release.js</code></a></h3>
+<p>This script selected binaries and preapares output for release.</p>
+</li>
+<li>
+<h3 id="integration_test-crate"><a class="header" href="#integration_test-crate"><code>integration_test</code> crate</a></h3>
+<p>This crate contains integration tests for Ellie. You can test compiler, tokenizer, parser, vm and fmt using this crate.</p>
+</li>
+</ul>
 
                     </main>
 

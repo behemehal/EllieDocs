@@ -59,8 +59,6 @@
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
-        <link rel="stylesheet" href="ellie-light-highlight.css">
-        <link rel="stylesheet" href="ellie-dark-highlight.css">
 
 
         <!-- Custom theme stylesheets -->
@@ -199,6 +197,21 @@
 <li>Get data from stack position</li>
 </ul>
 </li>
+<li>AbsoluteIndex
+<ul>
+<li>Get data from from pointer[ index pointer ]</li>
+</ul>
+</li>
+<li>AbsoluteProperty
+<ul>
+<li>Get data from array type’s property</li>
+</ul>
+</li>
+<li>AbsoluteStatic
+<ul>
+<li>Get data from static program</li>
+</ul>
+</li>
 <li>IndirectA
 <ul>
 <li>Load A register value</li>
@@ -222,21 +235,6 @@
 <li>IndirectY
 <ul>
 <li>Load Y register value</li>
-</ul>
-</li>
-<li>AbsoluteIndex
-<ul>
-<li>Get data from stack position and get index of it</li>
-</ul>
-</li>
-<li>AbsoluteProperty
-<ul>
-<li>Get data from stack position and get property of it</li>
-</ul>
-</li>
-<li>Paramater
-<ul>
-<li>Get data from parameter register</li>
 </ul>
 </li>
 </ul>
@@ -293,13 +291,13 @@
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldb"><a class="header" href="#ldb">LDB</a></h1>
 <p>Load value to B register</p>
@@ -307,12 +305,13 @@
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 <li>Paramater</li>
 </ul>
 <h1 id="ldc"><a class="header" href="#ldc">LDC</a></h1>
@@ -321,13 +320,13 @@
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldx"><a class="header" href="#ldx">LDX</a></h1>
 <p>Load value to X register</p>
@@ -335,13 +334,13 @@
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="ldy"><a class="header" href="#ldy">LDY</a></h1>
 <p>Load value to A register</p>
@@ -349,13 +348,13 @@
 <ul>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
+<li>AbsoluteStatic</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
-<li>Paramater</li>
 </ul>
 <h1 id="sta"><a class="header" href="#sta">STA</a></h1>
 <p>Store value from A register to stack position</p>
@@ -364,7 +363,8 @@
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stb"><a class="header" href="#stb">STB</a></h1>
 <p>Store value from B register to stack position</p>
@@ -373,7 +373,8 @@
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stc"><a class="header" href="#stc">STC</a></h1>
 <p>Store value from C register to stack position</p>
@@ -382,7 +383,8 @@
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="sty"><a class="header" href="#sty">STY</a></h1>
 <p>Store value from Y register to stack position</p>
@@ -391,7 +393,8 @@
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
-<li>Paramater</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="stx"><a class="header" href="#stx">STX</a></h1>
 <p>Store value from X register to stack position</p>
@@ -400,6 +403,8 @@
 <li>Implict</li>
 <li>Immediate</li>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>AbsoluteProperty</li>
 </ul>
 <h1 id="eq"><a class="header" href="#eq">EQ</a></h1>
 <p>Compare equality on B and C registers and set A register to 1 if equal, 0 otherwise</p>
@@ -485,128 +490,125 @@
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="inc"><a class="header" href="#inc">INC</a></h1>
-<p>Increment A register</p>
-<h2 id="addressing-modes-25"><a class="header" href="#addressing-modes-25">Addressing Modes</a></h2>
-<ul>
-<li>Implict</li>
-</ul>
-<h1 id="dec"><a class="header" href="#dec">DEC</a></h1>
-<p>Decrement A register</p>
-<h2 id="addressing-modes-26"><a class="header" href="#addressing-modes-26">Addressing Modes</a></h2>
-<ul>
-<li>Implict</li>
-</ul>
 <h1 id="jmp"><a class="header" href="#jmp">JMP</a></h1>
 <p>Jump to address</p>
-<h2 id="addressing-modes-27"><a class="header" href="#addressing-modes-27">Addressing Modes</a></h2>
+<h2 id="addressing-modes-25"><a class="header" href="#addressing-modes-25">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
+</ul>
+<h1 id="jmpa"><a class="header" href="#jmpa">JMPA</a></h1>
+<p>Jump to address if A register is true</p>
+<h2 id="addressing-modes-26"><a class="header" href="#addressing-modes-26">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
 </ul>
 <h1 id="call"><a class="header" href="#call">CALL</a></h1>
 <p>Call function</p>
-<h2 id="addressing-modes-28"><a class="header" href="#addressing-modes-28">Addressing Modes</a></h2>
+<h2 id="addressing-modes-27"><a class="header" href="#addressing-modes-27">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
 </ul>
 <h1 id="ret"><a class="header" href="#ret">RET</a></h1>
 <p>Return data</p>
-<h2 id="addressing-modes-29"><a class="header" href="#addressing-modes-29">Addressing Modes</a></h2>
+<h2 id="addressing-modes-28"><a class="header" href="#addressing-modes-28">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
-<li>Immidiate</li>
+</ul>
+<h1 id="push"><a class="header" href="#push">PUSH</a></h1>
+<p>Push A register value to array</p>
+<h2 id="addressing-modes-29"><a class="header" href="#addressing-modes-29">Addressing Modes</a></h2>
+<ul>
 <li>Absolute</li>
+<li>AbsoluteIndex</li>
 <li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 </ul>
-<h1 id="aol"><a class="header" href="#aol">AOL</a></h1>
-<p>Alter locals for next instruction from other scope resets in next instruction</p>
+<h1 id="spus"><a class="header" href="#spus">SPUS</a></h1>
+<p>Push char to allocated string</p>
 <h2 id="addressing-modes-30"><a class="header" href="#addressing-modes-30">Addressing Modes</a></h2>
 <ul>
 <li>Absolute</li>
-</ul>
-<h1 id="push"><a class="header" href="#push">PUSH</a></h1>
-<p>Push A register value to array</p>
-<h2 id="addressing-modes-31"><a class="header" href="#addressing-modes-31">Addressing Modes</a></h2>
-<ul>
-<li>Absolute</li>
+<li>AbsoluteIndex</li>
+<li>IndirectA</li>
 <li>IndirectB</li>
 <li>IndirectC</li>
 <li>IndirectX</li>
 <li>IndirectY</li>
-<li>AbsoluteIndex</li>
-<li>AbsoluteProperty</li>
 </ul>
-<h1 id="len"><a class="header" href="#len">LEN</a></h1>
+<h1 id="len-deprecated"><a class="header" href="#len-deprecated">LEN [DEPRECATED]</a></h1>
 <p>Get length of array push to A register</p>
-<h2 id="addressing-modes-32"><a class="header" href="#addressing-modes-32">Addressing Modes</a></h2>
+<h2 id="addressing-modes-31"><a class="header" href="#addressing-modes-31">Addressing Modes</a></h2>
 <ul>
-<li>Implict</li>
+<li>Absolute</li>
 </ul>
 <h1 id="a2i"><a class="header" href="#a2i">A2I</a></h1>
 <p>Convert A register to integer</p>
-<h2 id="addressing-modes-33"><a class="header" href="#addressing-modes-33">Addressing Modes</a></h2>
+<h2 id="addressing-modes-32"><a class="header" href="#addressing-modes-32">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2f"><a class="header" href="#a2f">A2F</a></h1>
 <p>Convert A register to float</p>
-<h2 id="addressing-modes-34"><a class="header" href="#addressing-modes-34">Addressing Modes</a></h2>
+<h2 id="addressing-modes-33"><a class="header" href="#addressing-modes-33">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2d"><a class="header" href="#a2d">A2D</a></h1>
 <p>Convert A register to double</p>
-<h2 id="addressing-modes-35"><a class="header" href="#addressing-modes-35">Addressing Modes</a></h2>
+<h2 id="addressing-modes-34"><a class="header" href="#addressing-modes-34">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2b"><a class="header" href="#a2b">A2B</a></h1>
 <p>Convert A register to byte</p>
-<h2 id="addressing-modes-36"><a class="header" href="#addressing-modes-36">Addressing Modes</a></h2>
+<h2 id="addressing-modes-35"><a class="header" href="#addressing-modes-35">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2s"><a class="header" href="#a2s">A2S</a></h1>
 <p>Convert A register to string</p>
-<h2 id="addressing-modes-37"><a class="header" href="#addressing-modes-37">Addressing Modes</a></h2>
+<h2 id="addressing-modes-36"><a class="header" href="#addressing-modes-36">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2c"><a class="header" href="#a2c">A2C</a></h1>
 <p>Convert A register to char</p>
-<h2 id="addressing-modes-38"><a class="header" href="#addressing-modes-38">Addressing Modes</a></h2>
+<h2 id="addressing-modes-37"><a class="header" href="#addressing-modes-37">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
 <h1 id="a2o"><a class="header" href="#a2o">A2O</a></h1>
 <p>Convert A register to bool</p>
+<h2 id="addressing-modes-38"><a class="header" href="#addressing-modes-38">Addressing Modes</a></h2>
+<ul>
+<li>Implict</li>
+</ul>
+<h1 id="arr"><a class="header" href="#arr">ARR</a></h1>
+<p>Allocated stack array indicator, shows how many items are in array next [size] instructions will be array</p>
 <h2 id="addressing-modes-39"><a class="header" href="#addressing-modes-39">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="jmpa"><a class="header" href="#jmpa">JMPA</a></h1>
-<p>Jump to address if A register is true</p>
+<h1 id="str"><a class="header" href="#str">STR</a></h1>
+<p>Allocate string on heap register its reference in stack memory</p>
 <h2 id="addressing-modes-40"><a class="header" href="#addressing-modes-40">Addressing Modes</a></h2>
-<ul>
-<li>Absolute</li>
-</ul>
-<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
-<p>Pops last stack location</p>
-<h2 id="addressing-modes-41"><a class="header" href="#addressing-modes-41">Addressing Modes</a></h2>
 <ul>
 <li>Implict</li>
 </ul>
-<h1 id="acp"><a class="header" href="#acp">ACP</a></h1>
-<p>Alter cursor position exclude next instruction</p>
+<h1 id="sar"><a class="header" href="#sar">SAR</a></h1>
+<p>To-be removed</p>
+<h2 id="addressing-modes-41"><a class="header" href="#addressing-modes-41">Addressing Modes</a></h2>
+<ul>
+<li>Immediate</li>
+</ul>
+<h1 id="pops"><a class="header" href="#pops">POPS</a></h1>
+<p>Pops last stack location</p>
 <h2 id="addressing-modes-42"><a class="header" href="#addressing-modes-42">Addressing Modes</a></h2>
 <ul>
-<li>Absolute</li>
+<li>Implict</li>
 </ul>
 <h1 id="brk"><a class="header" href="#brk">BRK</a></h1>
 <p>Remove stack</p>
@@ -619,6 +621,24 @@
 <h2 id="addressing-modes-44"><a class="header" href="#addressing-modes-44">Addressing Modes</a></h2>
 <ul>
 <li>Immediate</li>
+</ul>
+<h1 id="co-deprecated"><a class="header" href="#co-deprecated">CO [DEPRECATED]</a></h1>
+<p>Construct class</p>
+<h2 id="addressing-modes-45"><a class="header" href="#addressing-modes-45">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
+</ul>
+<h1 id="fn"><a class="header" href="#fn">FN</a></h1>
+<p>Function definition, if active stack does not match with FN’s absolute address then it will be ignored and skipped to end of it</p>
+<h2 id="addressing-modes-46"><a class="header" href="#addressing-modes-46">Addressing Modes</a></h2>
+<ul>
+<li>Immediate</li>
+</ul>
+<h1 id="dea"><a class="header" href="#dea">DEA</a></h1>
+<p>Deallocate memory</p>
+<h2 id="addressing-modes-47"><a class="header" href="#addressing-modes-47">Addressing Modes</a></h2>
+<ul>
+<li>Absolute</li>
 </ul>
 
                     </main>
