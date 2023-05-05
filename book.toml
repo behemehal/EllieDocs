@@ -11,3 +11,5 @@ curly-quotes = true
 git-repository-url = "https://github.com/behemehal/EllieDocs"
 git-repository-icon = "fa-github"
 site-url = "/"
+cname="docs.ellie-lang.org"
+default-theme = "ellie-dark"
