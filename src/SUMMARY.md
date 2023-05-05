@@ -34,6 +34,8 @@
     * [Getter / Setter](getter_setter.md)
 - [Deep Dive](./deep_dive.md)
     * [Building Ellie](./building_ellie.md)
+    * [Run Stages](./stages.md)
+        * [Tokenizer Module](./tokenizer_module.md)
 - [ByteCode](./byte_code.md)
     * [Instructions](./bytecode_instructions.md)
     * [Instruction OpCodes](./bytecode_opcodes.md)
